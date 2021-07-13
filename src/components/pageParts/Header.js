@@ -1,6 +1,8 @@
 import React from 'react'
 import {BrowserRouter, Link } from 'react-router-dom'
 
+import GoogleAuth from '../authServices/GoogleAuth'
+
 const Header = () => {
     return (
         <BrowserRouter>
@@ -9,10 +11,7 @@ const Header = () => {
                     Home
                 </Link>
                 <div className="right menu" style={{padding:'10px 0'}}>
-                    <button className="ui google red  button" >
-                        <i className="google  icon"></i>
-                        Sign In With Google
-                    </button>
+                    <GoogleAuth />
                 </div>
             </div>
         </BrowserRouter>
