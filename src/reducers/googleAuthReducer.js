@@ -1,12 +1,13 @@
+import {SIGNIN, SIGNOUT} from '../actions/types'
 const INITIAL_STATE = {
     isSignedIn: null
 }
 const googleAuthReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
-        case 'SIGN_IN':
+        case SIGNIN:
             return {...state, isSignedIn: true}
 
-        case 'SIGN_OUT':
+        case SIGNOUT:
             return {...state, isSignedIn: false}
         
         default:

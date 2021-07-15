@@ -1,11 +1,13 @@
+import {SIGNIN, SIGNOUT} from './types'
+
 export const signIn = () => {
     return {
-        type: 'SIGN_IN'
+        type: SIGNIN
     }
 }
 
 export const signOut = () => {
     return {
-        type: 'SIGN_OUT'
+        type: SIGNOUT
     }
 }
