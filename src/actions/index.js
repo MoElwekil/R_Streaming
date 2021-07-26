@@ -9,9 +9,10 @@ import {
   STREAM_SHOW,
 } from "./types";
 
-export const signIn = () => {
+export const signIn = (userId) => {
   return {
     type: SIGNIN,
+    payload: userId,
   };
 };
 
