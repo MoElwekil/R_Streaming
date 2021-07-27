@@ -12,6 +12,7 @@ class StreamList extends Component {
     return this.props.streams.map((stream) => {
       return (
         <div className="item" key={stream.id}>
+          {this.renderEditButtons(stream)}
           <i className="large middle aligned icon camera" />
           <div className="content">
             {stream.title}
@@ -20,6 +21,17 @@ class StreamList extends Component {
         </div>
       );
     });
+  }
+
+  renderEditButtons(stream) {
+    if (stream.userId === this.props.currentUserId) {
+      return (
+        <div className="right floated content">
+          <button className="ui button primary">Edit</button>
+          <button className="ui button negative">Remove</button>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -35,6 +47,7 @@ class StreamList extends Component {
 const mapStateToProps = (state) => {
   return {
     streams: Object.values(state.stream),
+    currentUserId: state.googleAuth.userId,
   };
 };
 
