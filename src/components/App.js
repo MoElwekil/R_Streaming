@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 
+import history from "../history";
 import Header from "./pageParts/Header";
 import StreamCreate from "./stream/StreamCreate";
 import StreamList from "./stream/StreamList";
@@ -9,10 +10,10 @@ const App = () => {
   return (
     <div>
       <Header />
-      <BrowserRouter>
+      <Router history={history}>
         <Route path="/" exact component={StreamList} />
         <Route path="/stream/create" component={StreamCreate} />
-      </BrowserRouter>
+      </Router>
     </div>
   );
 };
