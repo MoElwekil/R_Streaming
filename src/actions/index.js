@@ -1,7 +1,7 @@
 import stream from "../apis/stream";
 import {
-  SIGNIN,
-  SIGNOUT,
+  SIGN_IN,
+  SIGN_OUT,
   STREAMS_LIST,
   STREAM_CREATE,
   STREAM_DELETE,
@@ -11,14 +11,14 @@ import {
 
 export const signIn = (userId) => {
   return {
-    type: SIGNIN,
+    type: SIGN_IN,
     payload: userId,
   };
 };
 
 export const signOut = () => {
   return {
-    type: SIGNOUT,
+    type: SIGN_OUT,
   };
 };
 
