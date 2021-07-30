@@ -37,6 +37,8 @@ export const streamEdit = (id, formValues) => async (dispatch) => {
   const response = await stream.put(`/stream/${id}`, formValues);
 
   dispatch({ type: STREAM_EDIT, payload: response.data });
+
+  history.push("/");
 };
 
 export const streamDelete = (id) => async (dispatch) => {
